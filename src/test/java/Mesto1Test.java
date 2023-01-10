@@ -37,7 +37,7 @@ public class Mesto1Test {
         deleteLikePhotoById(photoId);
     }
 
-    //@Step("Take the first photo from the list")
+    @Step("Take the first photo from the list")
     private String getTheFirstPhotoId() {
         // Получение списка фотографий и выбор первой из него
         return given()
@@ -46,7 +46,7 @@ public class Mesto1Test {
                 .then().extract().body().path("data[0]._id"); // Получаем ID фотографии из массива данных
     }
 
-    //@Step("Like a photo by id")
+    @Step("Like a photo by id")
     private void likePhotoById(String photoId) {
         // Лайк фотографии по photoId
         given()
@@ -55,7 +55,7 @@ public class Mesto1Test {
                 .then().assertThat().statusCode(200); // Проверяем, что сервер вернул код 200
     }
 
-    //@Step("Delete like from the photo by id")
+    @Step("Delete like from the photo by id")
     private void deleteLikePhotoById(String photoId) {
         // Снять лайк с фотографии по photoId
         given()
